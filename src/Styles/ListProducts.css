@@ -1,0 +1,11 @@
+.containProducts {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px; 
+    padding: 20px; 
+    align-items: center;
+
+    border: 1px solid white;
+}

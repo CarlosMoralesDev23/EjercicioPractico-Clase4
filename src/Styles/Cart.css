@@ -1,0 +1,86 @@
+.cart-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+.cart-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item h5 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.cart-item > div {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item button {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.cart-item button:hover {
+    background-color: #ddd;
+}
+
+.cart-item span {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-item > span {
+    /* Estilo para el "SubTotal" */
+    font-weight: bold;
+    color: #e44d26;
+}
+
+.cart-item > button {
+    /* Estilo para el botón "Eliminar" */
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.cart-item > button:hover {
+    background-color: #c82333;
+}
+
+.cart-total {
+    padding-top: 20px;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
