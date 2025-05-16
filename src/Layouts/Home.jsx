@@ -7,14 +7,18 @@ import Footer from "../Components/Footer"
 
 
 
-const Home = ({ cart, addToCart, emptyToCart }) => {
+const Home = ({ cart, addToCart, emptyToCart, removeProductInCart }) => {
     return (
         <>
             <Header />
             <Nav />
             <Main />
 
-            <Cart cart={cart} emptyToCart={emptyToCart} />
+            <Cart
+                cart={cart}
+                emptyToCart={emptyToCart}
+                removeProductInCart={removeProductInCart}
+            />
             <ListProducts addToCart={addToCart} />
 
             <Footer />

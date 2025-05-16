@@ -15,13 +15,28 @@ function App() {
         setCart([])
     }
 
+    const removeProductInCart = (productId)=>{
+        console.log("Eliminando ID:", productId);
+
+        const newCart = cart.filter((product)=> product.id !== productId)
+
+        setCart(newCart)
+    }
+
+    
+
     
 
 
 
     return (
         <>
-            <Home cart={cart} addToCart={addToCart} emptyToCart={emptyToCart} />
+            <Home
+                cart={cart}
+                addToCart={addToCart}
+                emptyToCart={emptyToCart}
+                removeProductInCart={removeProductInCart}
+            />
         </>
     );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/Cart.css";
 
-const Cart = ({ cart, emptyToCart }) => {
+const Cart = ({ cart, emptyToCart, removeProductInCart }) => {
     return (
         <div className="cart-container">
             <h2>Cart</h2>
@@ -21,7 +21,9 @@ const Cart = ({ cart, emptyToCart }) => {
                     </div>
                     <div className="subTottalYEliminar">
                         <span>SubTotal : {productInCart.price} </span>
-                        <button>Eliminar</button>
+                        <button onClick={()=>removeProductInCart(productInCart.id)}>
+                            Eliminar
+                        </button>
                     </div>
                 </div>
             ))}
