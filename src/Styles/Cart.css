@@ -1,19 +1,26 @@
 .cart-container {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 10px solid #333; /* Borde negro */
+    border-radius: 12px;
     margin: 20px;
-    background-color: #f9f9f9;
+    background-color: #fff; /* Fondo blanco */
 }
 
 .cart-container h2 {
-    color: #333;
+    color: #333; /* Texto negro */
     margin-bottom: 15px;
     text-align: center;
 }
 
+.cart-container p {
+    color: #777;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .cart-item {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #170202;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
@@ -24,21 +31,39 @@
     border-bottom: none;
 }
 
-.cart-item h5 {
-    margin: 0;
-    font-size: 1.1em;
-    color: #555;
+.cart-item .nombreEImagen {
+    /* Contenedor del nombre e imagen */
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
 }
 
-.cart-item > div {
+.cart-item .nombreEImagen h5 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333; /* Texto negro */
+    flex-grow: 1;
+}
+
+.cart-item .nombreEImagen img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cart-item .botonesMenosYMas {
     display: flex;
     align-items: center;
 }
 
-.cart-item button {
+.cart-item .botonesMenosYMas button {
     background-color: #eee;
     color: #333;
-    border: none;
+    border: 1px solid #ccc;
     padding: 8px 12px;
     margin: 0 5px;
     border-radius: 5px;
@@ -46,26 +71,35 @@
     font-size: 0.9em;
 }
 
-.cart-item button:hover {
-    background-color: #ddd;
+.cart-item .botonesMenosYMas button:hover {
+    background-color: #ddd; /* Fondo gris más oscuro al pasar el ratón */
+    border-color: #bbb;
 }
 
-.cart-item span {
+.cart-item .botonesMenosYMas span {
     margin: 0 10px;
     font-weight: bold;
-    color: #333;
+    color: #333; /* Texto negro para cantidad */
 }
 
-.cart-item > span {
-    /* Estilo para el "SubTotal" */
+.cart-item .subTottalYEliminar {
+    width: 205px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item .subTottalYEliminar span {
+    /* Estilo para el SubTotal */
     font-weight: bold;
-    color: #e44d26;
+    color: #333; /* Texto negro para subtotal */
+    margin-right: 15px;
 }
 
-.cart-item > button {
+.cart-item .subTottalYEliminar button {
     /* Estilo para el botón "Eliminar" */
-    background-color: #dc3545;
-    color: white;
+    background-color: #f44336; /* Fondo rojo para eliminar */
+    color: white; /* Texto blanco para eliminar */
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
@@ -73,14 +107,39 @@
     font-size: 0.9em;
 }
 
-.cart-item > button:hover {
-    background-color: #c82333;
+.cart-item .subTottalYEliminar button:hover {
+    background-color: #d32f2f; /* Fondo rojo más oscuro al pasar el ratón */
 }
 
-.cart-total {
-    padding-top: 20px;
-    text-align: right;
+.cartTotalEImporte {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Añade esta línea para alinear verticalmente */
+    margin-top: 15px;
+}
+
+.cartTotalEImporte h2.cartTotal {
+    padding-top: 0;
+    text-align: left;
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.vaciarCarrito {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.vaciarCarrito:hover {
+    background-color: #555;
 }

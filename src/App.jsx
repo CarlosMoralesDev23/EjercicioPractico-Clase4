@@ -11,11 +11,17 @@ function App() {
         setCart([...cart, productToCart])
     }
 
+    const emptyToCart = ()=>{
+        setCart([])
+    }
+
+    
+
 
 
     return (
         <>
-            <Home cart={cart} addToCart={addToCart} />
+            <Home cart={cart} addToCart={addToCart} emptyToCart={emptyToCart} />
         </>
     );
 }
