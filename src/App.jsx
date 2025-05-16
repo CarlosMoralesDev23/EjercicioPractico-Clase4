@@ -8,7 +8,14 @@ function App() {
     const [ cart , setCart ] = useState( [] )
 
     const addToCart = (productToCart)=>{
-        setCart([...cart, productToCart])
+        // setCart([...cart, productToCart])
+
+        if(cart.length===0) {
+            setCart([...cart, {...productToCart, quantity:1}]);
+        }
+
+            
+
     }
 
     const emptyToCart = ()=>{
@@ -23,7 +30,7 @@ function App() {
         setCart(newCart)
     }
 
-    
+
 
     
 

@@ -16,7 +16,8 @@ const Cart = ({ cart, emptyToCart, removeProductInCart }) => {
                     </div>
                     <div className="botonesMenosYMas">
                         <button>-</button>
-                        <span>Cantidad</span>
+                        {/* <span> Cantidad </span> */}
+                        <span>Cantidad : {productInCart.quantity} </span>
                         <button>+</button>
                     </div>
                     <div className="subTottalYEliminar">
