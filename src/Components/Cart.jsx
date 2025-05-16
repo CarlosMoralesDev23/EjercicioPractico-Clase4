@@ -1,7 +1,13 @@
 import React from "react";
 import "../Styles/Cart.css";
 
-const Cart = ({ cart, emptyToCart, removeProductInCart }) => {
+const Cart = ({
+    cart,
+    emptyToCart,
+    removeProductInCart,
+    decrementQuantity,
+    incrementQuantity,
+}) => {
     return (
         <div className="cart-container">
             <h2>Cart</h2>
@@ -15,14 +21,29 @@ const Cart = ({ cart, emptyToCart, removeProductInCart }) => {
                         <h5>{productInCart.name}</h5>
                     </div>
                     <div className="botonesMenosYMas">
-                        <button>-</button>
-                        {/* <span> Cantidad </span> */}
+                        <button
+                            onClick={() => {
+                                if (productInCart.quantity > 1) {
+                                    decrementQuantity(productInCart.id);
+                                } else {
+                                    removeProductInCart(productInCart.id);
+                                }
+                            }}
+                        >
+                            -
+                        </button>
+
                         <span>Cantidad : {productInCart.quantity} </span>
-                        <button>+</button>
+
+                        <button onClick={() => incrementQuantity(productInCart.id)}>+</button>
                     </div>
                     <div className="subTottalYEliminar">
                         <span>SubTotal : {productInCart.price} </span>
-                        <button onClick={()=>removeProductInCart(productInCart.id)}>
+                        <button
+                            onClick={() =>
+                                removeProductInCart(productInCart.id)
+                            }
+                        >
                             Eliminar
                         </button>
                     </div>

@@ -1,40 +1,73 @@
-import "./App.css";import Home from "./Layouts/Home.jsx";
+import "./App.css";
+import Home from "./Layouts/Home.jsx";
 import { useState } from "react";
 
-
-
 function App() {
+    const [cart, setCart] = useState([]);
 
-    const [ cart , setCart ] = useState( [] )
-
-    const addToCart = (productToCart)=>{
+    const addToCart = (productToCart) => {
         // setCart([...cart, productToCart])
 
-        if(cart.length===0) {
-            setCart([...cart, {...productToCart, quantity:1}]);
+        const isProductInCart = cart.find(
+            (productInCart) => productInCart.id === productToCart.id
+        );
+
+        if (isProductInCart) {
+            setCart(
+                cart.map((productInCart) =>
+                    productInCart.id === productToCart.id
+                        ? {
+                              ...productInCart,
+                              quantity: productInCart.quantity + 1,
+                          }
+                        : productInCart
+                )
+            );
+        } else {
+            setCart([...cart, { ...productToCart, quantity: +1 }]);
         }
+    };
 
-            
+    const decrementQuantity = (productId) => {
+        console.log("Decrementando ID:", productId);
 
-    }
+        setCart(
+            cart.map((productInCart) =>
+                productInCart.id === productId
+                    ? {
+                            ...productInCart,
+                            quantity: Math.max(1, productInCart.quantity - 1)
+                        }
+                    : productInCart
+            )
+        );
+    };
+    const incrementQuantity = (productId) => {
+        console.log("Decrementando ID:", productId);
 
-    const emptyToCart = ()=>{
-        setCart([])
-    }
+        setCart(
+            cart.map((productInCart) =>
+                productInCart.id === productId
+                    ? {
+                            ...productInCart,
+                            quantity: productInCart.quantity + 1
+                        }
+                    : productInCart
+            )
+        );
+    };
 
-    const removeProductInCart = (productId)=>{
+    const emptyToCart = () => {
+        setCart([]);
+    };
+
+    const removeProductInCart = (productId) => {
         console.log("Eliminando ID:", productId);
 
-        const newCart = cart.filter((product)=> product.id !== productId)
+        const newCart = cart.filter((product) => product.id !== productId);
 
-        setCart(newCart)
-    }
-
-
-
-    
-
-
+        setCart(newCart);
+    };
 
     return (
         <>
@@ -43,6 +76,8 @@ function App() {
                 addToCart={addToCart}
                 emptyToCart={emptyToCart}
                 removeProductInCart={removeProductInCart}
+                decrementQuantity={decrementQuantity}
+                incrementQuantity={incrementQuantity}
             />
         </>
     );
